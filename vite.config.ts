@@ -16,6 +16,12 @@ export default defineConfig((config) => {
     build: {
       target: 'esnext',
     },
+    // 🚀 ADDED THIS ↓↓↓
+    server: {
+      host: true,
+      port: 5173,
+      allowedHosts: ['.up.railway.app'], // ✅ allows Railway domain
+    },
     plugins: [
       nodePolyfills({
         include: ['buffer', 'process', 'util', 'stream'],
